@@ -2,7 +2,7 @@
 
 session_start();
 session_destroy();
-setcookie('email',"",time()-123);
+setcookie('name',"",time()-123);
 header("location:signin.php");
 
 ?>

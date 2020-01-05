@@ -6,7 +6,7 @@ header("location:../signin.php");
 
 include("../db.php");
 
-$q = mysqli_query($conn,"SELECT * FROM `tbluser`");
+$q = mysqli_query($conn,"SELECT * FROM `tbluser` where first_name='$_SESSION[name]' and email='$_SESSION[email]'");
 $row = mysqli_fetch_array($q);
 
 ?>

@@ -1,7 +1,8 @@
 <?php
 // include("../db.php");
-// $q = mysqli_query($conn,"select * from tbluser");
 include('header.php');
+$q = mysqli_query($conn,"select * from tbluser");
+
 ?>
 <div class="col-md-9">
 <div class="span7" style="margin: 100px;">   

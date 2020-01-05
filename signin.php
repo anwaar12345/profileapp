@@ -2,12 +2,12 @@
 error_reporting(0);
 include('db.php');
 session_start();
-if($_SESSION['name']!=""){
 
-    echo "<script>alert('welcome backe');window.location.href='admin/dashboard.php'</script>";
-}
 if(isset($_COOKIE['name'])){
     $_SESSION['name'] = $_COOKIE['name'];
+    echo "<script>alert('welcome $_SESSION[name] with cookie backe');window.location.href='admin/dashboard.php'</script>";
+}elseif($_SESSION['name']!=""){
+
     echo "<script>alert('welcome backe');window.location.href='admin/dashboard.php'</script>";
 }
 if (isset($_POST['btns'])) {
@@ -27,6 +27,7 @@ if ($check > 0) {
     
      session_start();
      $_SESSION['name'] = $row['first_name'];
+     $_SESSION['email'] = $row['email'];
  if($u_role==1){
     header("location:admin/dashboard.php");
  }elseif ($u_role==2) {
